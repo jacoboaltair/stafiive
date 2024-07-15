@@ -1,0 +1,199 @@
+<table id="isPasted" style='box-sizing: border-box; border-collapse: collapse; border-spacing: 0px; max-width: 100%; background-color: rgb(245, 245, 245); width: 90%; margin-bottom: 24px; border: 1px solid rgb(221, 221, 221); color: rgb(68, 50, 94); font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-right: calc(10%);'>
+    <tbody style="box-sizing: border-box;">
+    <tr style="box-sizing: border-box;">
+        <td style="box-sizing: border-box; padding: 8px; line-height: 1.5; vertical-align: middle; border: 1px solid rgb(221, 221, 221); width: 54.0491%; background-color: rgb(159, 226, 191);">
+            <p style="box-sizing: border-box; margin: 0px 0px 20px; text-align: center;"><span style="font-size: 24px;"><strong><u><span
+                    style="color: rgb(0, 0, 0);">Area of Practice</span></u></strong></span></p>
+            <p style="box-sizing: border-box; margin: 0px 0px 20px;"><span
+                    style="box-sizing: border-box; font-size: 18px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0);"><u
+                    style="box-sizing: border-box;"><strong style="box-sizing: border-box; font-weight: 500;">Please note that this law firm exclusively handles cases related to:</strong></u></span>
+            </p>
+
+            <ul style="box-sizing: border-box; margin-top: 0px; margin-bottom: 12px;">
+                {% for area_of_practice in general_information.area_of_practice %}
+                <li style="font-size: 18px; color: rgb(0, 0, 0); font-family: Verdana, Geneva, sans-serif;">
+                    {{ area_of_practice }}
+                </li>
+                {% endfor %}
+            </ul>
+            <p><br></p>
+            <p>
+                <span style="font-size: 18px; font-family: Verdana, Geneva, sans-serif; color: rgb(255, 0, 0);">
+                    The attorney does not work with the following cases:
+                </span>
+            </p>
+            <ul>
+
+                {% for cases in general_information.no_handle_case %}
+                <li style="font-size: 18px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0);">
+                    {{ cases }}
+                    <ul>
+                        <li style="font-size: 18px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0);">
+
+                        </li>
+                    </ul>
+                </li>
+                {% endfor %}
+
+            </ul>
+            <u><span style="color: rgb(0, 0, 0); font-size: 18px; font-family: Verdana, Geneva, sans-serif;">Our lead attorney names is&nbsp;&nbsp;</span>
+                </u>
+
+            <span style="color: rgb(0, 0, 0); font-size: 24px; font-family: Verdana, Geneva, sans-serif;"><strong> {{ general_information.principal }} </strong></span>
+        </td>
+        <td style="box-sizing: border-box; padding: 8px; line-height: 1.5; vertical-align: top; border: 1px solid rgb(221, 221, 221); width: 45.6559%; background-color: rgb(204, 204, 204);">
+            <p style="box-sizing: border-box; margin: 0px 0px 20px; text-align: center;"><span
+                    style="color: rgb(0, 0, 0);"><u><span style="font-size: 24px;"><strong>Consultations - Pricing and Duration</strong></span></u></span>
+            </p>
+
+
+            {% if general_information.price  %}
+
+                <p style="box-sizing: border-box; margin: 0px 0px 20px;">
+                    <span style="font-family: Verdana, Geneva, sans-serif; font-size: 18px; color: rgb(0, 0, 0);">
+                        <u>Price:</u>
+                        <a rel="noopener noreferrer" target="_blank" title="">
+                            <u>&nbsp;</u>
+                        </a>
+                    </span>
+                    <a rel="noopener noreferrer" target="_blank">{{ general_information.price }}</a>
+                </p>
+            {% endif %}
+
+             {% if general_information.consultation_way  %}
+
+                <p style="box-sizing: border-box; margin: 0px 0px 20px;">
+                    <span style="font-family: Verdana, Geneva, sans-serif; font-size: 18px; color: rgb(0, 0, 0);">
+                        <u>Consultation procedure:</u>
+                        <a rel="noopener noreferrer" target="_blank" title="">
+                            <u>&nbsp;</u>
+                        </a>
+                    </span>
+                    <a rel="noopener noreferrer" target="_blank">{{ general_information.consultation_way }}</a>
+
+                </p>
+            {% endif %}
+
+            {% if general_information.link  %}
+
+                <p style="box-sizing: border-box; margin: 0px 0px 20px;">
+                    <span style="font-family: Verdana, Geneva, sans-serif; font-size: 18px; color: rgb(0, 0, 0);">
+                        <u>Payment link:</u>
+                        <a rel="noopener noreferrer" target="_blank" title="">
+                            <u>&nbsp;</u>
+                        </a>
+                    </span>
+                    <a rel="noopener noreferrer" target="_blank">{{ general_information.link }}</a>
+
+                </p>
+            {% endif %}
+
+
+
+            {% if general_information.consultation_manage  %}
+
+                <p style="box-sizing: border-box; margin: 0px 0px 20px;">
+                    <span style="font-family: Verdana, Geneva, sans-serif; font-size: 18px; color: rgb(0, 0, 0);">
+                        <u>Consultation procedures:</u>
+                        <a rel="noopener noreferrer" target="_blank" title="">
+                            <u>&nbsp;</u>
+                        </a>
+                    </span>
+                    <a rel="noopener noreferrer" target="_blank">{{ general_information.consultation_manage }}</a>
+                </p>
+            {% endif %}
+
+
+             {% if general_information.consultation_extension  %}
+
+                <p style="box-sizing: border-box; margin: 0px 0px 20px;">
+                    <span style="font-family: Verdana, Geneva, sans-serif; font-size: 18px; color: rgb(0, 0, 0);">
+                        <u>Consultation extension:</u>
+                        <a rel="noopener noreferrer" target="_blank" title="">
+                            <u>&nbsp;</u>
+                        </a>
+                    </span>
+                    <a rel="noopener noreferrer" target="_blank">{{ general_information.consultation_extension }}</a>
+
+                </p>
+            {% endif %}
+
+
+            {% if general_information.languages  %}
+
+                <p style="box-sizing: border-box; margin: 0px 0px 20px;">
+                    <span style="font-family: Verdana, Geneva, sans-serif; font-size: 18px; color: rgb(0, 0, 0);">
+                        <u>Consultation Languages Supported:</u>
+                        <a rel="noopener noreferrer" target="_blank" title="">
+                            <u>&nbsp;</u>
+                        </a>
+                    </span>
+                    <a rel="noopener noreferrer" target="_blank">{{ general_information.languages }}</a>
+
+                </p>
+            {% endif %}
+
+
+
+            <p style="box-sizing: border-box; margin: 0px 0px 20px;">
+                <span style="font-family: Verdana, Geneva, sans-serif; font-size: 18px; color: rgb(0, 0, 0);">
+                    <u>general information:</u>
+                    <a rel="noopener noreferrer" target="_blank" title="">
+                        <u>&nbsp;</u>
+                    </a>
+                </span>
+
+                <a rel="noopener noreferrer" target="_blank">{{ general_information.consultation_manage }}</a>
+            <a rel="noopener noreferrer" target="_blank">{{ general_information.consultation_way }}</a>
+
+            </p>
+
+
+
+            <hr>
+            <p style="text-align: center;"><span style="font-size: 24px;"><strong><span style="color: rgb(0, 0, 0);"><u>Law Firm Information</u></span></strong></span>
+            </p><span id="isPasted" style="box-sizing: border-box; font-size: 18px;"><span
+                style="box-sizing: border-box; color: rgb(0, 0, 0); font-family: Verdana, Geneva, sans-serif;"><u
+                style="box-sizing: border-box;"><strong>Working hours:</strong></u></span></span><span
+                style="box-sizing: border-box; color: rgb(0, 0, 0); font-size: 18px; font-family: Verdana, Geneva, sans-serif;"><a
+                href="{{ general_information.schedule_link }}         Law Firm Information  Working hours: {{ general_information.working_hours }}  Address: {{ general_information.address }}   Directions:    {{ general_information.direction }}"
+                rel="noopener noreferrer" target="_blank" title=""><u style="box-sizing: border-box;"><br
+                style="box-sizing: border-box;"></u></a></span>
+            <p id="isPasted">
+                <span style="font-size: 18px; color: rgb(0, 0, 0); font-family: Verdana, Geneva, sans-serif;">
+                    {{ general_information.working_hours }}
+                </span>
+            </p>
+
+            <p style="box-sizing: border-box; margin: 0px 0px 20px;"><span
+                    style="box-sizing: border-box; font-size: 18px; font-family: Verdana, Geneva, sans-serif; color: rgb(0, 0, 0);"><u
+                    style="box-sizing: border-box;"><strong>Address:</strong></u></span><span
+                    style="box-sizing: border-box; font-size: 18px; color: rgb(0, 0, 0); font-family: Verdana, Geneva, sans-serif;"><a
+                    href="https://calendly.com/amezola-legalgroup/30min?month=2024-03        "
+                    rel="noopener noreferrer" target="_blank" title=""><strong><u style="box-sizing: border-box;"><br
+                    style="box-sizing: border-box;"></u></strong></a></span><span
+                    style="font-size: 18px; color: rgb(0, 0, 0); font-family: Verdana, Geneva, sans-serif;">{{ general_information.address }} </span>
+            </p>
+            <p style="box-sizing: border-box; margin: 0px 0px 20px;">
+                <span style="font-size: 18px; color: rgb(0, 0, 0); font-family: Verdana, Geneva, sans-serif;">
+                    <u>
+                        <strong>Directions:&nbsp;</strong>
+                    </u>
+                </span>
+            <p>
+                <span style="font-size: 18px; color: rgb(0, 0, 0); font-family: Verdana, Geneva, sans-serif;">{{ general_information.direction }}</span>
+            </p>
+
+        </td>
+    </tr>
+    <tr>
+        <td style="box-sizing: border-box; padding: 8px; line-height: 1.5; vertical-align: middle; border: 1px solid rgb(221, 221, 221); width: 54.0491%; background-color: rgb(159, 226, 191);">
+            <p>
+                <a href="https://calendly.com/amezola-legalgroup/30min?month=2024-03         Law Firm Information  Working hours: Monday - Thursday: 9:00 AM - 5:00 PM PST  Fridays (Work from home): 9:00 AM - 5:00 PM CST  Address: 4541 College Avenue, San Diego, CA  Directions:   For mailing purposes, always use the po address: p.o. box 16371, San Diego, CA 92176.   The physical office is located on college BLVD and El Cajon BLVD. It is in a little shopping center with plenty of parking."
+                   rel="noopener noreferrer" target="_blank" title=""><br></a></p></td>
+        <td style="box-sizing: border-box; padding: 8px; line-height: 1.5; vertical-align: top; border: 1px solid rgb(221, 221, 221); width: 45.6559%; background-color: rgb(137, 207, 240);">
+            <a href="https://secure.lawpay.com/pages/amezolalg/operating" rel="noopener noreferrer" target="_blank"
+               title=""><br></a></td>
+    </tr>
+    </tbody>
+</table>

@@ -1,0 +1,9 @@
+{% for sales in sales_pitch %}
+
+    {% if sales  %}
+        <p>
+            <span style="font-size: 24px; color: rgb(0, 0, 0);"><strong>{{ loop.index }}:</strong><strong>&nbsp;</strong></span>
+            <span style="font-size: 18px; color: rgb(0, 0, 0); font-family: Verdana, Geneva, sans-serif; background-color: rgb(255, 204, 255);">{{ sales[2:] }}</span>
+        </p>
+    {% endif %}
+{% endfor %}

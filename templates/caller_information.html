@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Page Title</title>
+   </head>
+   <body>
+      <p><strong id="isPasted"><span style="font-size: 18px; color: rgb(0, 0, 0);">Caller name:</span></strong>
+          <span style="font-size: 18px; color: rgb(0, 0, 0);">&nbsp;#ma_caller_name#<br>
+              <strong>Caller Phone number</strong><strong>:&nbsp;</strong>#ma_dialpad_num#<br><strong>Caller Email:</strong> #ma_caller_email#<br><strong>Reason of the call:</strong> #ma_call_subject#</span></p>
+      <p><span style="font-size: 24px; color: rgb(0, 0, 0);"><strong><u>Sales Pitch:</u></strong></span></p>
+      {% for sales_pitch in sales_pitches %}
+      <p>
+         <span style="font-size: 24px; color: rgb(0, 0, 0);">
+         <strong>{{ loop.index }}:</strong><strong>&nbsp;</strong>
+         </span>
+         <span style="font-size: 18px; color: rgb(0, 0, 0); font-family: Verdana, Geneva, sans-serif; background-color: rgb(255, 204, 255);">
+         {{ sales_pitch }}
+         </span>
+      </p>
+      {% endfor %}
+   </body>
+</html>

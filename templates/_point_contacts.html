@@ -1,0 +1,135 @@
+<table class="table table-bordered" style="width: 100%;">
+    <thead>
+    <tr>
+        <th colspan="2" style="width: 99.9314%; background-color: rgb(159, 226, 191);">
+            <div style="text-align: center;"><strong id="isPasted"><span
+                    style="font-family: Verdana, Geneva, sans-serif; font-size: 18px; color: rgb(0, 0, 0);">If a response is not received within one minute, kindly conclude the call and return it to the client.</span></strong><span
+                    style="font-size: 18px;"><br></span></div>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for workers in law_firm_workers %}
+    {% if workers|length > 1 %}
+    <tr>
+        <td style="width: 47.6672%;  {% if loop.index % 2 == 0 %} background-color: rgb(164, 194, 244);  {% else %}  background-color: rgb(234, 209, 220); {% endif %}">
+            <p style="text-align: left;">
+                <span style="font-family: Verdana, Geneva, sans-serif; font-size: 24px; color: rgb(0, 0, 0);"><strong>{{ workers[0].position }}:</strong></span>
+                <span style="font-family: Verdana, Geneva, sans-serif; font-size: 18px; color: rgb(0, 0, 0);"><strong>&nbsp;</strong>{{ workers[0].name + workers[0].last_name  }}</span>
+            </p>
+            <ul>
+                <li id="isPasted"
+                    style="color: rgb(0, 0, 0); font-family: Verdana, Geneva, sans-serif; font-size: 18px;"><strong>Email:&nbsp;</strong>
+                    {{ workers[0].email }}
+                </li>
+                <li id="isPasted" style="color: rgb(0, 0, 0); font-family: Verdana, Geneva, sans-serif;"><span
+                        style="font-size: 18px;"><strong>Phone:</strong> {{ workers[0].phone }}</span></li>
+                <li id="isPasted" style="color: rgb(0, 0, 0);"><span
+                        style="font-family: Verdana, Geneva, sans-serif; font-size: 18px;"><strong><u>Availability to reach out:</u>&nbsp;</strong></span>
+                    <ul>
+                        <li style="font-family: Verdana, Geneva, sans-serif; font-size: 18px;">{{
+                            workers[0].availability }}
+                        </li>
+                    </ul>
+                </li>
+                <li id="isPasted" style="color: rgb(0, 0, 0);"><span
+                        style="font-family: Verdana, Geneva, sans-serif; font-size: 18px;"><strong><u>Reasons to reach out:</u></strong></span>
+                    <ul style="color: initial;">
+                        <li id="isPasted"
+                            style="font-size: 18px; color: rgb(0, 0, 0); font-family: Verdana, Geneva, sans-serif;">
+                            {{ workers[0].reasons_to_reach }}
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+        </td>
+        <td style="width: 47.6672%;  {% if loop.index % 2 != 0 %} background-color: rgb(164, 194, 244);  {% else %}  background-color: rgb(234, 209, 220); {% endif %}">
+            <p style="text-align: left;">
+                <span style="font-family: Verdana, Geneva, sans-serif; font-size: 24px; color: rgb(0, 0, 0);"><strong>{{ workers[1].position }}:</strong></span>
+                <span style="font-family: Verdana, Geneva, sans-serif; font-size: 18px; color: rgb(0, 0, 0);"><strong>&nbsp;</strong>{{ workers[1].name + workers[1].last_name  }}</span>
+            </p>
+            <ul>
+                <li id="isPasted"
+                    style="color: rgb(0, 0, 0); font-family: Verdana, Geneva, sans-serif; font-size: 18px;"><strong>Email:&nbsp;</strong>
+                    {{ workers[1].email }}
+                </li>
+                <li id="isPasted" style="color: rgb(0, 0, 0); font-family: Verdana, Geneva, sans-serif;"><span
+                        style="font-size: 18px;"><strong>Phone:</strong> {{ workers[1].phone }}</span></li>
+                <li id="isPasted" style="color: rgb(0, 0, 0);"><span
+                        style="font-family: Verdana, Geneva, sans-serif; font-size: 18px;"><strong><u>Availability to reach out:</u>&nbsp;</strong></span>
+                    <ul>
+                        <li style="font-family: Verdana, Geneva, sans-serif; font-size: 18px;">{{
+                            workers[1].availability }}
+                        </li>
+                    </ul>
+                </li>
+                <li id="isPasted" style="color: rgb(0, 0, 0);"><span
+                        style="font-family: Verdana, Geneva, sans-serif; font-size: 18px;"><strong><u>Reasons to reach out:</u></strong></span>
+                    <ul style="color: initial;">
+                        <li id="isPasted"
+                            style="font-size: 18px; color: rgb(0, 0, 0); font-family: Verdana, Geneva, sans-serif;">
+                            {{ workers[1].reasons_to_reach }}
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+        </td>
+    </tr>
+    {% else %}
+    <tr>
+        <td style="width: 47.6672%;  {% if loop.index % 2 == 0 %} background-color: rgb(164, 194, 244);  {% else %}  background-color: rgb(234, 209, 220); {% endif %}">
+            <p style="text-align: left;">
+                <span style="font-family: Verdana, Geneva, sans-serif; font-size: 24px; color: rgb(0, 0, 0);"><strong>{{ workers[0].position }}:</strong></span>
+                <span style="font-family: Verdana, Geneva, sans-serif; font-size: 18px; color: rgb(0, 0, 0);"><strong>&nbsp;</strong>{{ workers[0].name }} {{ workers[0].last_name }}</span>
+            </p>
+            <ul>
+                <li id="isPasted"
+                    style="color: rgb(0, 0, 0); font-family: Verdana, Geneva, sans-serif; font-size: 18px;"><strong>Email:&nbsp;</strong>
+                    {{ workers[0].email }}
+                </li>
+                <li id="isPasted" style="color: rgb(0, 0, 0); font-family: Verdana, Geneva, sans-serif;"><span
+                        style="font-size: 18px;"><strong>Phone:</strong> {{ workers[0].phone }}</span></li>
+                <li id="isPasted" style="color: rgb(0, 0, 0);"><span
+                        style="font-family: Verdana, Geneva, sans-serif; font-size: 18px;"><strong><u>Availability to reach out:</u>&nbsp;</strong></span>
+                    <ul>
+                        <li style="font-family: Verdana, Geneva, sans-serif; font-size: 18px;">{{
+                            workers[0].availability }}
+                        </li>
+                    </ul>
+                </li>
+                <li id="isPasted" style="color: rgb(0, 0, 0);"><span
+                        style="font-family: Verdana, Geneva, sans-serif; font-size: 18px;"><strong><u>Reasons to reach out:</u></strong></span>
+                    <ul style="color: initial;">
+                        <li id="isPasted"
+                            style="font-size: 18px; color: rgb(0, 0, 0); font-family: Verdana, Geneva, sans-serif;">
+                            {{ workers[0].reasons_to_reach }}
+                        </li>
+
+                    </ul>
+                </li>
+
+                {% if workers[0].other_notes %}
+
+                <li id="isPasted" style="color: rgb(0, 0, 0);"><span
+                        style="font-family: Verdana, Geneva, sans-serif; font-size: 18px;"><strong><u>Other Notes:</u></strong></span>
+                    <ul style="color: initial;">
+                        <li id="isPasted"
+                            style="font-size: 18px; color: rgb(0, 0, 0); font-family: Verdana, Geneva, sans-serif;">
+                            {{ workers[0].other_notes }}
+                        </li>
+
+                    </ul>
+                </li>
+                {% endif %}
+
+            </ul>
+        </td>
+
+    </tr>
+    {% endif %}
+    {% endfor %}
+
+    </tbody>
+</table><p><br></p>
